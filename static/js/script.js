@@ -3,6 +3,16 @@ function gotoBottom(id){
    element.scrollTop = element.scrollHeight - element.clientHeight;
 }
 
+function fetch_all_messages(new_msg) {
+    var user_msgs = document.getElementsByClassName("fromuser");
+    msg_history = "";
+    for (var i = 0, len = user_msgs.length; i < len; i++) {
+        msg_history += user_msgs.value + "~^%!*$*!%^~"; // separator.
+    }
+    return msg_history + new_msg;
+}
+
+// some setup for the request for Flask to return the chatbot's response.
 var url = "http://meverynoob.pythonanywhere.com/request_response";
 var method = "POST";
 
@@ -13,7 +23,7 @@ var request;
 
 function receive_message(e) {
     e.preventDefault(); // By default, the page reloads. This prevents that refresh.
-    var postData = document.getElementById('messagebox').value;
+    var postData = fetch_all_messages(document.getElementById('messagebox').value);
     document.getElementById('messagebox').value = "";
     request = new XMLHttpRequest();
     request.onload = load_response;
