@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, Response, jsonify
+from chatbot import ChatBot
 
 app = Flask(__name__)
 
@@ -14,5 +15,11 @@ def generate_response():
     if len(message) == 0:
         return Response("no u", status=500)
 
-    r = jsonify({"message": message, "response": "Hello, world!"})
+    messages = message.split("~^%!*$*!%^~")
+
+    cbot = ChatBot()
+    result = None
+    for message in messages:
+        result = cbot.handle_message(message)
+    r = jsonify({"message": message, "response": result})
     return r
