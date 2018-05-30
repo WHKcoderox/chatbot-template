@@ -1,0 +1,36 @@
+T,greetings
+Hello
+hello
+Hello!
+Hey
+hey
+Hey!
+What's up?
+whassup!
+wassup
+sup
+Sup!
+Yo
+Yo!
+Morning!
+Afternoon!
+Good afternoon
+Pleased to meet you.
+Hi
+hi
+Hi!
+T,valedictions
+Bye!
+byebye
+bb
+ttyl
+gtg
+GTG
+TTYL
+sayonara
+farewell!
+Farewell
+adieu
+Later
+lata
+later
