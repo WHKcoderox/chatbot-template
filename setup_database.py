@@ -12,7 +12,7 @@ def fix_single_quote(string): # SQL typically messes up when there's single quot
     return string
 
 # this sets up a connection to the database and creates all the tables based on the inputs you put into the text file.
-connection = sqlite3.connect("./inputs.sqlite3")
+connection = sqlite3.connect("./inputs.sqlite3", isolation_level = None )
 
 cursor = connection.cursor()
 
