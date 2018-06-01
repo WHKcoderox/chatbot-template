@@ -14,7 +14,10 @@ def generate_response():
     message = str(request.data.decode("utf-8"))
     if len(message) == 0:
         return Response("no u", status=500)
-
+    
+    # flask accepts an entire message history from the website in a POST request, then
+    # 'simulates' all the user messages being handled by the chatbot, so the chatbot is
+    # 'aware' of all previous messages sent.
     messages = message.split("~^%!*$*!%^~")
 
     cbot = ChatBot()
